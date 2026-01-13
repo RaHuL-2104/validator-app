@@ -1,9 +1,8 @@
-import {createContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {AppConstants} from "../util/constants.js";
 import axios from "axios";
 import {toast} from "react-toastify";
-
-export const AppContext = createContext();
+import {AppContext} from "./AppContextCreate.jsx";
 
 export const AppContextProvider = (props) => {
 
