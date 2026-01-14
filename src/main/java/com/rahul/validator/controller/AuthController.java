@@ -50,7 +50,8 @@ public class AuthController {
                 .httpOnly(true)
                 .path("/")
                 .maxAge(Duration.ofDays(1)) // 10 hours
-                .sameSite("Strict")
+                .sameSite("None")
+                .secure(true)
                 .build();
             return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())
                 .body(new AuthResponse(request.getEmail(), jwtToken));
@@ -127,10 +128,10 @@ public class AuthController {
     public ResponseEntity<?> logout(HttpServletResponse response) {
         ResponseCookie cookie = ResponseCookie.from("jwt", "")
                 .httpOnly(true)
-                .secure(false)
+                .secure(true)
                 .path("/")
                 .maxAge(0)
-                .sameSite("Strict")
+                .sameSite("None")
                 .build();
 
         return ResponseEntity.ok()
