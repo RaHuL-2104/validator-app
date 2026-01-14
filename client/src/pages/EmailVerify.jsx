@@ -46,7 +46,7 @@ const EmailVerify = () => {
 
         setLoading(true);
         try {
-            const response = await axios.post(backendURL+"/verify-otp", {otp});
+            const response = await axios.post(backendURL+"/verify-otp", {otp},{withCredentials: true});
             if (response.status === 200) {
                 toast.success("OTP verified successfully!");
                 getUserData();
