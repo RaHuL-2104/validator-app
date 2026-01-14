@@ -22,7 +22,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 @RequiredArgsConstructor
 public class JwtRequestFilter extends OncePerRequestFilter{
 
-    private static final List<String> PUBLIC_URLS = List.of("/login", "/register", "/send-reset-otp", "/reset-password", "/logout");
+    private static final List<String> PUBLIC_URLS = List.of("/api/v1.0/login", "/api/v1.0/register", "/api/v1.0/send-reset-otp", "/api/v1.0/reset-password", "/api/v1.0/logout","/api/v1.0/is-authenticated");
 
     private final JwtUtil jwtUtil;
     private final AppUserDetailsService appUserDetailsService;
