@@ -1,10 +1,11 @@
-import {useEffect, useState} from "react";
+import {createContext,useEffect, useState} from "react";
 import {AppConstants} from "../util/constants.js";
 import axios from "axios";
 import {toast} from "react-toastify";
-import {AppContext} from "./AppContextCreate.jsx";
 
-export const AppContextProvider = (props) => {
+export const AppContext = createContext(null);
+
+export const AppContextProvider = ({ children }) => {
 
     axios.defaults.withCredentials = true;
 
@@ -52,7 +53,7 @@ export const AppContextProvider = (props) => {
 
     return (
         <AppContext.Provider value={contextValue}>
-            {props.children}
+            {children}
         </AppContext.Provider>
     )
 
