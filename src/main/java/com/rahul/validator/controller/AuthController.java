@@ -46,7 +46,7 @@ public class AuthController {
             authenticate(request.getEmail(),request.getPassword());
             final UserDetails userDetails = appUserDetailsService.loadUserByUsername(request.getEmail());
             final String jwtToken = jwtUtil.generateToken(userDetails);
-            ResponseCookie cookie = ResponseCookie.from("jwt", jwtToken)
+            ResponseCookie cookie = ResponseCookie.from("jwt","")
                 .httpOnly(true)
                 .path("/")
                 .maxAge(Duration.ofDays(1)) // 10 hours
