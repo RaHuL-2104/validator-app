@@ -50,6 +50,7 @@ public class AuthController {
                 .httpOnly(true)
                 .path("/")
                 .maxAge(Duration.ofDays(1)) // 10 hours
+                .domain("validator-w28g.onrender.com")
                 .sameSite("None")
                 .secure(true)
                 .build();
@@ -130,6 +131,7 @@ public class AuthController {
                 .httpOnly(true)
                 .secure(true)
                 .path("/")
+                .domain("validator-w28g.onrender.com")
                 .maxAge(0)
                 .sameSite("None")
                 .build();

@@ -32,11 +32,11 @@ protected void doFilterInternal(
         @org.springframework.lang.NonNull HttpServletRequest request,
         @org.springframework.lang.NonNull HttpServletResponse response,
         @org.springframework.lang.NonNull FilterChain filterChain) throws ServletException, IOException {
-        System.out.println("=== JWT FILTER DEBUG ===");
-        System.out.println("Request URI: " + request.getRequestURI());
-        System.out.println("Servlet Path: " + request.getServletPath());
-        System.out.println("Context Path: " + request.getContextPath());
-        System.out.println("========================");
+        // System.out.println("=== JWT FILTER DEBUG ===");
+        // System.out.println("Request URI: " + request.getRequestURI());
+        // System.out.println("Servlet Path: " + request.getServletPath());
+        // System.out.println("Context Path: " + request.getContextPath());
+        // System.out.println("========================");
 
     String path = request.getServletPath();
     if (PUBLIC_URLS.contains(path)) {
